@@ -91,9 +91,8 @@ function get_time_from_server(do_clear) {
 	xhrObj = new XMLHttpRequest();
 	programState.startTime = get_current_time();
 	xhrObj.onreadystatechange = get_time_from_server_part2;
-	xhrObj.open("GET", (isDemo ? "https://apps-vm3.srv.peterjin.org/time?") + "?random=" + Math.random(), true);
-	xhrObj.send(null);
-}
+        	xhrObj.open("GET", (isDemo ? "https://us-central1-webclockbackend.cloudfunctions.net/insvc-time" : "/insvc/time") + "?random=" + Math.random(), true);
+
 function set_ampm(ampm) {
 	useAMPM = ampm;
 }
